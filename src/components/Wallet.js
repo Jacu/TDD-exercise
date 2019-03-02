@@ -14,9 +14,8 @@ export class Wallet extends Component {
     }
 
     deposit = () => this.props.deposit(this.state.balance);
-
-    withdraw = () => this.props.withdraw(this.state.balance);
     
+    withdraw = () => this.props.withdraw(this.state.balance);
 
     render() {
         return (
@@ -31,4 +30,4 @@ export class Wallet extends Component {
     }
 }
 
-export default connect(state => { return {balance: state } }, { deposit, withdraw })(Wallet);
+export default connect(state => { return {balance: state.balance } }, { deposit, withdraw })(Wallet);
